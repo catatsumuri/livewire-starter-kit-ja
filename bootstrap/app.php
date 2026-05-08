@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->web(append: [
             SetTeamUrlDefaults::class,
+            \App\Http\Middleware\SetLocaleFromQuery::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

@@ -23,7 +23,7 @@ ui-label{flex-direction:column!important;align-items:flex-start!important}
 ui-label .t-en{margin-left:0;margin-top:2px}
 </style>
 <script>
-document.addEventListener('DOMContentLoaded',()=>{
+function applyBilingual(){
     const nodes=[];
     const walk=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
     while(walk.nextNode()){
@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded',()=>{
         s.innerHTML=parts[0]+'<span class="t-en">'+parts.slice(1).join(' ')+'</span>';
         n.replaceWith(s);
     });
-});
+}
+document.addEventListener('DOMContentLoaded',applyBilingual);
+document.addEventListener('livewire:navigated',applyBilingual);
 </script>
 @endif

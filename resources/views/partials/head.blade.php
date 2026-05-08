@@ -15,8 +15,12 @@
 @fluxAppearance
 @if(app()->getLocale() === 'bilingual')
 <style>
-.t-en{display:block;font-size:9px;opacity:.35;font-style:italic;line-height:1.4;font-weight:400}
+.t-en{display:inline-block;font-size:10px;font-weight:500;font-style:normal;
+  color:#818cf8;background:rgba(129,140,248,.12);
+  padding:1px 6px;border-radius:10px;margin-left:5px;
+  vertical-align:middle;white-space:nowrap;line-height:1.8}
 ui-label{flex-direction:column!important;align-items:flex-start!important}
+ui-label .t-en{margin-left:0;margin-top:2px}
 </style>
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
